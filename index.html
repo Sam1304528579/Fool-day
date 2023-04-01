@@ -38,14 +38,13 @@
     <button id="botao2">嬲死你！！</button>
     <script>
         const button2 = document.getElementById('botao2');
-        let left = 50;
-        button2.addEventListener('mouseover', function() {
-            if(left == 50){
-                left = 50;
-            }else{
-                left = 54;
-            }
-            this.style.left = left + '%';
+        button2.addEventListener('click', function() {
+            let width = window.innerWidth - button2.offsetWidth;
+            let height = window.innerHeight - button2.offsetHeight;
+            let newLeft = Math.floor(Math.random() * width);
+            let newTop = Math.floor(Math.random() * height);
+            button2.style.left = newLeft + "px";
+            button2.style.top = newTop + "px";
         });
         document.getElementById('botao1').addEventListener('click', function() {
             alert('Sam Sam Love you❤️');
